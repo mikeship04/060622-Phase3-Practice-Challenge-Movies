@@ -23,5 +23,10 @@ puts "Creating roles..."
 # * and a role belongs to an actor.                         *
 # ***********************************************************
 # Create Roles Here
+puts "Creating roles..."
+r1 = Role.create(salary: 100000, character_name: "Lola Bunny", actor_id: 1, movie_id: 1)
+r2 = Role.create(salary: 120000, character_name: "Elmer Fudd", actor_id: 2, movie_id: 1)
+r3 = Role.create(salary: 140000, character_name: "Yosemite Sam", actor_id: 3, movie_id: 2)
+r4 = Role.create(salary: 150000, character_name: "Bugs Bunny", actor_id: 4, movie_id: 2)
 
 puts "Seeding done!"

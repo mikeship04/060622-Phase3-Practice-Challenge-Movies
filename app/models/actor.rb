@@ -8,18 +8,15 @@ class Actor < ActiveRecord::Base
         total_money.sum
     end
 
-    #not working correctly
+    #working correctly
     def blockbusters
-        self.movies.map do |m|
-            m.where("box_office_earnings" > 50000000)
-        end
+        movies.filter { |m| m.box_office_earnings > 50000000 }
     end
 
     #not working correctly
-    def most_successful
-        self.roles.map do |r|
-            r.salary.sum
-        end
+    def self.most_successful
+        net = Actor.all.map { |a| a.total_salary }.max
+        self.find {|a| a.total_salary == net}
     end
 
 end
